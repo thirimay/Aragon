@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Register" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="Hellespont_DPO_JobSite.Account.Register" %>
+﻿<%@ Page Title="Register" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" EnableViewState="true" CodeBehind="Register.aspx.cs" Inherits="Hellespont_DPO_JobSite.Account.Register" %>
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
     <hgroup class="title">
@@ -6,7 +6,7 @@
         <h2>Use the form below to create a new account.</h2>
     </hgroup>
 
-    <asp:CreateUserWizard runat="server" ID="RegisterUser" ViewStateMode="Disabled" OnCreatedUser="RegisterUser_CreatedUser">
+    <asp:CreateUserWizard runat="server" ID="RegisterUser" ViewStateMode="Disabled" OnCreatedUser="RegisterUser_CreatedUser" OnContinueButtonClick="RegisterUser_Continue" OnFinishButtonClick="RegisterUser_Finish">
         <LayoutTemplate>
             <asp:PlaceHolder runat="server" ID="wizardStepPlaceholder" />
             <asp:PlaceHolder runat="server" ID="navigationPlaceholder" />
@@ -33,7 +33,7 @@
                             </li>
                             <li>
                                 <asp:Label runat="server" AssociatedControlID="Email">Email address</asp:Label>
-                                <asp:TextBox runat="server" ID="Email" />
+                                <asp:TextBox runat="server" ID="Email" TextMode="Email" />
                                 <asp:RequiredFieldValidator runat="server" ControlToValidate="Email"
                                     CssClass="field-validation-error" ErrorMessage="The email address field is required." />
                             </li>
@@ -47,9 +47,9 @@
                                 <asp:Label runat="server" AssociatedControlID="ConfirmPassword">Confirm password</asp:Label>
                                 <asp:TextBox runat="server" ID="ConfirmPassword" TextMode="Password" />
                                 <asp:RequiredFieldValidator runat="server" ControlToValidate="ConfirmPassword"
-                                     CssClass="field-validation-error" Display="Dynamic" ErrorMessage="The confirm password field is required." />
+                                    CssClass="field-validation-error" Display="Dynamic" ErrorMessage="The confirm password field is required." />
                                 <asp:CompareValidator runat="server" ControlToCompare="Password" ControlToValidate="ConfirmPassword"
-                                     CssClass="field-validation-error" Display="Dynamic" ErrorMessage="The password and confirmation password do not match." />
+                                    CssClass="field-validation-error" Display="Dynamic" ErrorMessage="The password and confirmation password do not match." />
                             </li>
                         </ol>
                         <asp:Button runat="server" CommandName="MoveNext" Text="Register" />
@@ -57,61 +57,61 @@
                 </ContentTemplate>
                 <CustomNavigationTemplate />
             </asp:CreateUserWizardStep>
-            <asp:WizardStep ID="RegisterUserWizardStep2" runat="server">
+            <asp:WizardStep runat="server" ID="Step2">
                 <div>
                     <ol>
                         <li>
                             <asp:Label runat="server" AssociatedControlID="Nationality">Nationality</asp:Label>
-                            <asp:DropDownList ID="Nationality" runat="server" >                                
+                            <asp:DropDownList ID="Nationality" runat="server">
                             </asp:DropDownList>
                         </li>
                         <li>
                             <asp:Label runat="server" AssociatedControlID="Gender">Gender</asp:Label>
-                               <asp:RadioButtonList runat="server" ID="Gender">
-                                   <asp:ListItem Text="Male" Value="0"></asp:ListItem>
-                                   <asp:ListItem Text="Female" Value="1"></asp:ListItem>
-                               </asp:RadioButtonList>
+                            <asp:RadioButtonList runat="server" ID="Gender">
+                                <asp:ListItem Text="Male" Value="0"></asp:ListItem>
+                                <asp:ListItem Text="Female" Value="1"></asp:ListItem>
+                            </asp:RadioButtonList>
                         </li>
                         <li>
                             <asp:Label runat="server" AssociatedControlID="DOB">Date of Birth</asp:Label>
-                            <asp:TextBox ID="DOB" runat="server" ></asp:TextBox>                            
-                        </li>
-                         <li>
-                            <asp:Label runat="server" AssociatedControlID="Race">Race</asp:Label>
-                            <asp:DropDownList ID="Race" runat="server" >                                
+                            <asp:TextBox ID="DOB" runat="server"></asp:TextBox>
+                        </li> 
+                        <li>
+                            <asp:Label runat="server" AssociatedControlID="ddlReligion">Religion</asp:Label>                                
+                            <asp:DropDownList ID="ddlReligion" runat="server">                                
                             </asp:DropDownList>
-                        </li>
-                          <li>
-                            <asp:Label runat="server" AssociatedControlID="Religion">Religion</asp:Label>
-                            <asp:DropDownList ID="Religion" runat="server" >                                
+                        </li> 
+                       <li>
+                            <asp:Label runat="server" AssociatedControlID="ddlMStatus">Marital Status</asp:Label>                                
+                            <asp:DropDownList ID="ddlMStatus" runat="server">                                
                             </asp:DropDownList>
                         </li>
                     </ol>
-                </div>                
+                </div>
             </asp:WizardStep>
-            <asp:WizardStep ID="RegisterUserWizardStep3" runat="server">
+            <asp:WizardStep runat="server" ID="Step3">
                 <div>
-                    <ol>
-                     <li>
+                    <ul>
+                         <li>
                             <asp:Label runat="server" AssociatedControlID="Location">Location</asp:Label>
-                               <asp:RadioButtonList runat="server" ID="Location">
-                                   <asp:ListItem Text="Male" Value="0"></asp:ListItem>
-                                   <asp:ListItem Text="Female" Value="1"></asp:ListItem>
-                               </asp:RadioButtonList>
+                            <asp:RadioButtonList runat="server" ID="Location">
+                                <asp:ListItem Text="Male" Value="0"></asp:ListItem>
+                                <asp:ListItem Text="Female" Value="1"></asp:ListItem>
+                            </asp:RadioButtonList>
                         </li>
                         <li>
                             <asp:Label runat="server" AssociatedControlID="Address1">Address Line 1</asp:Label>
-                            <asp:TextBox ID="Address1" runat="server" ></asp:TextBox>                            
+                            <asp:TextBox ID="Address1" runat="server"></asp:TextBox>
                         </li>
                         <li>
                             <asp:Label runat="server" AssociatedControlID="Address2">Address Line 2</asp:Label>
-                            <asp:TextBox ID="Address2" runat="server" ></asp:TextBox>                            
+                            <asp:TextBox ID="Address2" runat="server"></asp:TextBox>
                         </li>
-                         <li>
+                        <li>
                             <asp:Label runat="server" AssociatedControlID="ContactNo">Contact Number</asp:Label>
-                            <asp:TextBox ID="TextBox1" runat="server" ></asp:TextBox>                            
+                            <asp:TextBox ID="ContactNo" runat="server"></asp:TextBox>
                         </li>
-                     </ol>
+                    </ul>
                 </div>
             </asp:WizardStep>
         </WizardSteps>

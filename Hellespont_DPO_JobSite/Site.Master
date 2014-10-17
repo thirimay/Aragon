@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Hellespont_DPO_JobSite.SiteMaster" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" EnableTheming="true"  Inherits="Hellespont_DPO_JobSite.SiteMaster" %>
 
 <!DOCTYPE html>
 <html lang="en">

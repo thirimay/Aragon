@@ -57,11 +57,11 @@ namespace Hellespont_DPO_JobSite
             else
             {
                 // Validate the Anti-XSRF token
-                if ((string)ViewState[AntiXsrfTokenKey] != _antiXsrfTokenValue
-                    || (string)ViewState[AntiXsrfUserNameKey] != (Context.User.Identity.Name ?? String.Empty))
-                {
-                    throw new InvalidOperationException("Validation of Anti-XSRF token failed.");
-                }
+                //if ((string)ViewState[AntiXsrfTokenKey] != _antiXsrfTokenValue
+                //    || (string)ViewState[AntiXsrfUserNameKey] != (Context.User.Identity.Name ?? String.Empty))
+                //{
+                //    throw new InvalidOperationException("Validation of Anti-XSRF token failed.");
+                //}
             }
         }
 

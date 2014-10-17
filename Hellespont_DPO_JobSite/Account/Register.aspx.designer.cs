@@ -31,13 +31,13 @@ namespace Hellespont_DPO_JobSite.Account {
         protected global::System.Web.UI.WebControls.CreateUserWizardStep RegisterUserWizardStep;
         
         /// <summary>
-        /// RegisterUserWizardStep2 control.
+        /// Step2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.WizardStep RegisterUserWizardStep2;
+        protected global::System.Web.UI.WebControls.WizardStep Step2;
         
         /// <summary>
         /// Nationality control.
@@ -67,31 +67,31 @@ namespace Hellespont_DPO_JobSite.Account {
         protected global::System.Web.UI.WebControls.TextBox DOB;
         
         /// <summary>
-        /// Race control.
+        /// ddlReligion control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList Race;
+        protected global::System.Web.UI.WebControls.DropDownList ddlReligion;
         
         /// <summary>
-        /// Religion control.
+        /// ddlMStatus control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList Religion;
+        protected global::System.Web.UI.WebControls.DropDownList ddlMStatus;
         
         /// <summary>
-        /// RegisterUserWizardStep3 control.
+        /// Step3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.WizardStep RegisterUserWizardStep3;
+        protected global::System.Web.UI.WebControls.WizardStep Step3;
         
         /// <summary>
         /// Location control.
@@ -121,12 +121,12 @@ namespace Hellespont_DPO_JobSite.Account {
         protected global::System.Web.UI.WebControls.TextBox Address2;
         
         /// <summary>
-        /// TextBox1 control.
+        /// ContactNo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox ContactNo;
     }
 }
